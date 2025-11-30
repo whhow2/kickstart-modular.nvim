@@ -40,6 +40,8 @@ require('lazy').setup({
 
   require 'kickstart.plugins.kanagawa',
 
+  require 'kickstart.plugins.rosepine',
+
   require 'kickstart.plugins.todo-comments',
 
   require 'kickstart.plugins.mini',
