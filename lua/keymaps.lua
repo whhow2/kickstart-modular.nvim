@@ -51,4 +51,28 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- NOTE: Custom keymaps
+-- NOTE: Saving
+vim.keymap.set('n', 'zz', ':update<CR>', { desc = 'update file/write' })
+
+-- NOTE: Easy escape
+vim.keymap.set('i', 'jk', '<ESC>:update<CR>', { desc = 'write file from insert mode' })
+vim.keymap.set('i', 'jj', '<ESC>', { desc = 'escape from insert mode' })
+
+-- NOTE: Move text vertically
+-- NOTE: Mac
+vim.keymap.set('n', '∆', ':m .+1<CR>==', { desc = 'move text down one line in normal mode' })
+vim.keymap.set('n', '˚', ':m .-2<CR>==', { desc = 'move text up one line in normal mode' })
+vim.keymap.set('i', '∆', '<ESC>:m .+1<CR>==gi', { desc = 'move text down one line in insert mode' })
+vim.keymap.set('i', '˚', '<ESC>:m .-2<CR>==gi', { desc = 'move text up one line in insert mode' })
+vim.keymap.set('v', '∆', ":m '>+1<CR>gv=gv", { desc = 'move text down one line in visual mode' })
+vim.keymap.set('i', '˚', ":m '<-2<CR>gv=gv", { desc = 'move text up one line in visual mode' })
+
+-- NOTE: all other OSs
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'move text down one line in normal mode' })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'move text up one line in normal mode' })
+vim.keymap.set('i', '<A-j>', '<ESC>:m .+1<CR>==gi', { desc = 'move text down one line in insert mode' })
+vim.keymap.set('i', '<A-k>', '<ESC>:m .-2<CR>==gi', { desc = 'move text up one line in insert mode' })
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { desc = 'move text down one line in visual mode' })
+vim.keymap.set('i', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'move text up one line in visual mode' })
 -- vim: ts=2 sts=2 sw=2 et
